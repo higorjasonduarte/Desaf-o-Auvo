@@ -1,10 +1,14 @@
 class CartPage {
   constructor(page) {
     this.page = page;
-    this.checkoutButton = page.locator('.checkout_button');
+    this.checkoutButton = page.locator('#checkout');
   }
 
-  async goToCheckout() {
+  async validateProductInCart(productName) {
+    await this.page.locator('.cart_item').filter({ hasText: productName }).isVisible();
+  }
+
+  async proceedToCheckout() {
     await this.checkoutButton.click();
   }
 }

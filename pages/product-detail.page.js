@@ -1,22 +1,24 @@
-class ProductDetailPage {
+class ProductsPage {
   constructor(page) {
     this.page = page;
-    this.productTitle = page.locator('.inventory_details_name');
-    this.productPrice = page.locator('.inventory_details_price');
-    this.productDescription = page.locator('.inventory_details_desc');
-    this.addToCartButton = page.locator('[data-test="add-to-cart-button"]');
+    this.productTitle = page.locator('.inventory_item_name');
+    this.backpackAddToCart = page.locator('#add-to-cart-sauce-labs-backpack');
+    this.cartButton = page.locator('.shopping_cart_link');
   }
 
-  async getProductDetails() {
-    const title = await this.productTitle.textContent();
-    const price = await this.productPrice.textContent();
-    const description = await this.productDescription.textContent();
-    return { title, price, description };
+  async validateProduct(title, price) {
+    const product = this.page.locator('.inventory_item').filter({ hasText: title });
+    await product.locator('.inventory_item_name').isVisible();
+    await product.locator('.inventory_item_price').isVisible();
   }
 
-  async addToCart() {
-    await this.addToCartButton.click();
+  async addBackpackToCart() {
+    await this.backpackAddToCart.click();
+  }
+
+  async goToCart() {
+    await this.cartButton.click();
   }
 }
 
-module.exports = ProductDetailPage;
+module.exports = ProductsPage;

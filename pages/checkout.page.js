@@ -1,19 +1,28 @@
 class CheckoutPage {
   constructor(page) {
     this.page = page;
-    this.firstNameInput = page.locator('[data-test="firstName"]');
-    this.lastNameInput = page.locator('[data-test="lastName"]');
-    this.zipCodeInput = page.locator('[data-test="postalCode"]');
-    this.continueButton = page.locator('[data-test="continue"]');
-    this.finishButton = page.locator('[data-test="finish"]');
+    this.firstNameInput = page.locator('#first-name');
+    this.lastNameInput = page.locator('#last-name');
+    this.zipCodeInput = page.locator('#postal-code');
+    this.continueButton = page.locator('#continue');
+    this.finishButton = page.locator('#finish');
+    this.successMessage = page.locator('.complete-header');
   }
 
-  async completeCheckout(firstName, lastName, zipCode) {
+  async fillInformation(firstName, lastName, zipCode) {
     await this.firstNameInput.fill(firstName);
     await this.lastNameInput.fill(lastName);
     await this.zipCodeInput.fill(zipCode);
     await this.continueButton.click();
+  }
+
+  async finishOrder() {
     await this.finishButton.click();
+  }
+
+  async validateSuccess() {
+    await this.successMessage.waitFor();
+    return await this.successMessage.textContent();
   }
 }
 

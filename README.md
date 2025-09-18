@@ -5,13 +5,7 @@ Automação de testes web criada com Playwright + JavaScript, utilizando a arqui
 ## ✅ Funcionalidades testadas
 
 ### Login:
-Testes com todos os usuários válidos do sistema:
-- `standard_user`
-- `locked_out_user`
-- `problem_user`
-- `performance_glitch_user`
-- `error_user`
-- `visual_user`
+- Testes com todos os usuários válidos do sistema (`standard_user`, `locked_out_user`, `problem_user`, `performance_glitch_user`, `error_user`, `visual_user`).
 
 ### Navegação e Pesquisa:
 - Navegação para a página de inventário.
@@ -24,9 +18,10 @@ Testes com todos os usuários válidos do sistema:
 - Adição de produtos ao carrinho.
 - Acesso ao carrinho e navegação até checkout.
 
-### Finalização de Pedido:
+### Finalização de Pedido (Fluxo E2E):
 - Preenchimento do formulário de checkout.
 - Finalização completa da compra.
+- Validação da mensagem de sucesso **"Thank you for your order!"**.
 
 ---
 
@@ -51,7 +46,8 @@ e2e-tests/
 │   ├── login.test.js
 │   ├── search.test.js
 │   ├── product-validation.test.js
-│   └── checkout.test.js
+│   ├── checkout.test.js
+│   └── checkout-flow.test.js   <-- Novo fluxo E2E (checkout completo)
 ├── jest.config.js
 ├── package.json
 └── README.md
@@ -84,9 +80,9 @@ npx playwright install
 npx jest
 ```
 
-👉 Para rodar um teste específico:
+👉 Para rodar o fluxo E2E de Checkout:
 ```bash
-npx jest tests/login.test.js
+npx jest tests/checkout-flow.test.js
 ```
 
 ---
@@ -101,6 +97,11 @@ npx jest tests/login.test.js
 - `error_user`
 - `visual_user`
 
+**Senha para todos:**
+```
+secret_sauce
+```
+
 ---
 
 ## 🧠 Decisões e observações
@@ -110,16 +111,13 @@ npx jest tests/login.test.js
 
 ---
 
-## 📌 Requisitos
-- Node.js >= 16
-- npm
+## 📸 Exemplos de execução
+(opcional: adicione imagens ou gifs com execuções dos testes)
 
 ---
 
-## 📬 Contato
-Caso tenha dúvidas ou sugestões:
-- Higor Jason Duarte de Oliveira
-- [LinkedIn](https://www.linkedin.com/in/higor-jason-duarte-de-oliveira-737185177/)
-- [GitHub](https://github.com/higorjasonduarte)
+## 📌 Requisitos
+- Node.js >= 16
+- npm
 
 ---

@@ -1,17 +1,25 @@
+const { expect } = require('@playwright/test');
+
 class ProductsPage {
   constructor(page) {
     this.page = page;
-    this.searchInput = page.locator('[data-test="product_search"]');
-    this.productList = page.locator('.inventory_item');
+    this.productTitle = page.locator('.inventory_item_name');
+    this.backpackAddToCart = page.locator('#add-to-cart-sauce-labs-backpack');
+    this.cartButton = page.locator('.shopping_cart_link');
   }
 
-  async searchProduct(productName) {
-    await this.searchInput.fill(productName);
-    await this.page.keyboard.press('Enter');
+  async validateProduct(title, price) {
+    const product = this.page.locator('.inventory_item').filter({ hasText: title });
+    await expect(product.locator('.inventory_item_name')).toBeVisible();
+    await expect(product.locator('.inventory_item_price')).toBeVisible();
   }
 
-  async getProducts() {
-    return await this.productList.allTextContents();
+  async addBackpackToCart() {
+    await this.backpackAddToCart.click();
+  }
+
+  async goToCart() {
+    await this.cartButton.click();
   }
 }
 
