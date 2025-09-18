@@ -110,11 +110,6 @@ npx jest tests/login.test.js
 
 ---
 
-## 📸 Exemplos de execução
-(opcional: adicione imagens ou gifs com execuções dos testes)
-
----
-
 ## 📌 Requisitos
 - Node.js >= 16
 - npm
