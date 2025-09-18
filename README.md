@@ -111,11 +111,6 @@ secret_sauce
 
 ---
 
-## 📸 Exemplos de execução
-(opcional: adicione imagens ou gifs com execuções dos testes)
-
----
-
 ## 📌 Requisitos
 - Node.js >= 16
 - npm
