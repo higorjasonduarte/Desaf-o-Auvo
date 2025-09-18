@@ -101,11 +101,6 @@ npx jest tests/login.test.js
 - `error_user`
 - `visual_user`
 
-**Senha para todos:**
-```
-secret_sauce
-```
-
 ---
 
 ## 🧠 Decisões e observações
