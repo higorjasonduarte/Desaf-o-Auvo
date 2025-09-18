@@ -99,7 +99,7 @@ npx jest tests/checkout-flow.test.js
 
 **Senha para todos:**
 ```
-secret_sauce
+xxxxxxxxxxxx
 ```
 
 ---
