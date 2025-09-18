@@ -1,0 +1,23 @@
+{
+  "name": "desaf-o-auvo",
+  "version": "1.0.0",
+  "description": "Este projeto é uma Prova de Conceito (POC) para automação de testes E2E utilizando **Playwright** com **JavaScript** e arquitetura **Page Object Model (POM)**.",
+  "main": "playwright.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/higorjasonduarte/Desaf-o-Auvo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/higorjasonduarte/Desaf-o-Auvo/issues"
+  },
+  "homepage": "https://github.com/higorjasonduarte/Desaf-o-Auvo#readme",
+  "devDependencies": {
+    "jest": "^30.1.3"
+  }
+}
